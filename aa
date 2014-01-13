@@ -1,0 +1,81 @@
+<script>
+        $(document).ready(function()
+                {
+                    var role = $( '#role' ).val();
+                    if(role==1 || role==2)
+                    {
+                        $('#sinif').val('').attr("selected", "selected");
+                        $('#sube').val('').attr("selected", "selected");
+                        $('#sinif').prop('disabled', true);
+                        $('#sube').prop('disabled', true);
+                        $('#student_number').prop('disabled', true);
+                        $('#student_number').val('')
+
+                    }
+                    else {
+                        $('#sinif').prop('disabled', false);
+                        $('#sube').prop('disabled', false);
+                        $('#student_number').prop('disabled', false);
+
+                    }
+                }
+        );
+        $(function(){
+            $('#role').change(function(){
+                var role = $( '#role' ).val();
+                var sinif = $( '#sinif' ).val();
+                var sube = $( '#sube' ).val();
+
+                if(role==1 || role==2)
+                {
+                    $('#sinif').val('').attr("selected", "selected");
+                    $('#sube').val('').attr("selected", "selected");
+                    $('#sinif').prop('disabled', true);
+                    $('#sube').prop('disabled', true);
+                    $('#student_number').prop('disabled', true);
+                    $('#student_number').val('')
+
+                }
+                else {
+                    $('#sinif').prop('disabled', false);
+                    $('#sube').prop('disabled', false);
+                    $('#student_number').prop('disabled', false);
+
+                }
+
+            })
+
+                $('#knt_password').change(function(){
+                    var sifre1 = $( '#password' ).val();
+                    var sifre_knt = $( '#knt_password' ).val();
+                    if(sifre1 == sifre_knt){
+                        $('#tamam').prop('disabled', false);
+                                           }
+                    else{
+                       $('#tamam').prop('disabled', true);
+                        alert("Şifreler eşleşmiyor",{type: 'error'});
+                    }
+
+
+
+                })
+
+            });
+
+
+        $(function(){
+           $('#tamam').submit(function(){
+                    var role = $( '#role' ).val();
+                    var sinif = $( '#sinif' ).val();
+                    var sube = $( '#sube' ).val();
+
+            if(role=='' || sinif=='' || sube=='')
+            {
+
+                alert("Seçilebilir alanları seçiniz")
+            }
+
+        });
+
+        })
+    </script>
